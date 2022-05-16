@@ -53,6 +53,9 @@ int main()
 	cout << "\nGia tri duong nho nhat trong mang la: ";
 	Xuat(z);
 
+	int kq2 = TimViTri(a, n);
+	cout << "\nVi tri gia tri am lon nhat trong mang: " << kq2;
+
 	cout << "\nMang sau khi sap tang la: ";
 	SapTang(a, n);
 	Xuat(a, n);
@@ -173,7 +176,7 @@ int TimViTri(PHANSO a[], int n)
 	int lc = TimViTri(a, n - 1);
 	if (ktAm(a[n - 1]) == 0)
 		return lc;
-	//if (ktAm(lc) == 0)
+	if (ktAm(a[lc]) == 0)
 		return n - 1;
 	if (SoSanh(a[n - 1], a[lc]) == -1)
 		lc = n - 1;
